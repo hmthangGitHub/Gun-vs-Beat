@@ -1,0 +1,6 @@
+[submodule "Assets/3rdPartyArt"]
+	path = Assets/3rdPartyArt
+	url = ../3rdPartyArt
+[submodule "Assets/Ultilities"]
+	path = Assets/Ultilities
+	url = ../Ultilities
