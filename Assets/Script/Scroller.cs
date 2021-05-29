@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Scroller : MonoBehaviour
 {
-    public float beatPerDistance = 25;
+    public float beatPerDistance = 10;
     public float bpm = 60;
-
     public float speed;
     public bool isStarted = false;
     private void Awake()
@@ -14,15 +13,17 @@ public class Scroller : MonoBehaviour
         speed = beatPerDistance * bpm / 60;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.anyKey)
-        {
-            isStarted = true;
-        }
         if (isStarted)
         {
             this.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
         }
+    }
+
+    public void StartScrolling(float speed)
+    {
+        isStarted = true;
+        this.speed = speed;
     }
 }
